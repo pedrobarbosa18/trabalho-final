@@ -1,0 +1,68 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+class Doacao {
+    int id;
+    String tipo;
+    float quantidade;
+    String data;
+
+    Doacao(int id, String tipo, float quantidade, String data) {
+        this.id = id;
+        this.tipo = tipo;
+        this.quantidade = quantidade;
+        this.data = data;
+    }
+}
+
+class Doador {
+    int id;
+    String nome;
+    String contato;
+
+    Doador(int id, String nome, String contato) {
+        this.id = id;
+        this.nome = nome;
+        this.contato = contato;
+    }
+}
+
+class Vitima {
+    int id;
+    String nome;
+    String localizacao;
+    String necessidades;
+
+    Vitima(int id, String nome, String localizacao, String necessidades) {
+        this.id = id;
+        this.nome = nome;
+        this.localizacao = localizacao;
+        this.necessidades = necessidades;
+    }
+}
+
+class Distribuicao {
+    int id;
+    Doacao doacao;
+    Vitima vitima;
+    float quantidade;
+    String data;
+
+    Distribuicao(int id, Doacao doacao, Vitima vitima, float quantidade, String data) {
+        this.id = id;
+        this.doacao = doacao;
+        this.vitima = vitima;
+        this.quantidade = quantidade;
+        this.data = data;
+    }
+}
+
+public class SistemaDeDoacoes {
+    private static ArrayList<Doacao> doacoes = new ArrayList<>();
+    private static ArrayList<Doador> doadores = new ArrayList<>();
+    private static ArrayList<Vitima> vitimas = new ArrayList<>();
+    private static ArrayList<Distribuicao> distribuicoes = new ArrayList<>();
+    private static int doacaoId = 1;
+    private static int doadorId = 1;
+    private static int vitimaId = 1;
+    private static int distribuicaoId = 1;
