@@ -1,3 +1,6 @@
+Pedro Henrique Alves Barbosa 123222053
+Paulo Henrique Ribeiro de Andrade 124113962
+
 1. Compreendendo o Problema e o Contexto:
 • Enchentes no Rio Grande do Sul:
 o Impacto: Familiarize-se com a magnitude das enchentes, as áreas afetadas, o número de pessoas
@@ -156,3 +159,30 @@ Para se aprofundar no tema, recomendo a leitura de:
 • Livro: "O Futuro da Humanidade" - Yuval Noah Harari
 • Artigo: "A ética da inteligência artificial" - John Danaher
 • Site: "The Ethics of Artificial Intelligence" - The Markkula Center for Applied Ethics
+
++-----------------+        +-----------------+        +-----------------+
+|     Doacao      |        |     Doador      |        |     Vitima      |
++-----------------+        +-----------------+        +-----------------+
+| - id: int       |<-------| - id: int       |        | - id: int       |
+| - tipo: String  |1..*    | - nome: String  |        | - nome: String  |
+| - quantidade: float|     | - contato: String|        | - localizacao: String|
+| - data: Date    |        +-----------------+        | - necessidades: String|
++-----------------+        | registrarDoador()|        +-----------------+
+| registrarDoacao()|        | atualizarDoador()|        | registrarVitima()|
+| atualizarDoacao()|        | excluirDoador()  |        | atualizarVitima()|
+| excluirDoacao()  |        +-----------------+        | excluirVitima()  |
++-----------------+                                      +-----------------+
+
+                                +-----------------+
+                                |   Distribuicao  |
+                                +-----------------+
+                                | - id: int       |
+                                | - doacao: Doacao|
+                                | - vitima: Vitima|
+                                | - quantidade: float|
+                                | - data: Date    |
+                                +-----------------+
+                                | registrarDistribuicao()|
+                                | atualizarDistribuicao()|
+                                | excluirDistribuicao()  |
+                                +-----------------+
